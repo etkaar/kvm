@@ -35,6 +35,12 @@ tar -xzf main.tar.gz --strip-components=1
 rm main.tar.gz
 ```
 
+Then, update permissions:
+
+```
+chown 0700 /opt/kvm/create-vm.sh
+```
+
 ⛔️ Do **not** automatically update these scripts. In case you need to update it, make sure that it won't break your system.
 
 ---
