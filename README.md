@@ -1,5 +1,5 @@
 # KVM
-Lightweight scripts for kernel-based virtual machines (KVM). Written in DASH ([Debian Almquist Shell](https://wiki.archlinux.org/title/Dash)) to offer POSIX compliance.
+Simple scripts for kernel-based virtual machines (KVM). Written in DASH ([Debian Almquist Shell](https://wiki.archlinux.org/title/Dash)) to offer POSIX compliance.
 
 Tested on Debian 10 Buster and Debian 11 Bullseye.
 
