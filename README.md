@@ -47,7 +47,7 @@ chown 0700 /opt/kvm/create-vm.sh
 ## 3.0 Isolated Network
 
 ```
-touch /etc/libvirt/qemu/networks/isolated.xml
+virsh net-create /etc/libvirt/qemu/networks/isolated.xml
 
 <network>
 	<name>isolated</name>
