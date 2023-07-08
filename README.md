@@ -1,7 +1,7 @@
 # KVM
 Simple scripts for kernel-based virtual machines (KVM). Written in DASH ([Debian Almquist Shell](https://wiki.archlinux.org/title/Dash)) to offer POSIX compliance.
 
-Tested on Debian 10 Buster and Debian 11 Bullseye.
+Tested on Debian 12 Bookworm.
 
 ## 1.0 Introduction
 
@@ -20,8 +20,7 @@ You are required to install a few packages first:
 
 ```
 apt install whois libosinfo-bin dnsmasq-base
-apt install virtinst libvirt-daemon-system
-apt install qemu-kvm
+apt install qemu-system-x86 virtinst libvirt-daemon-system
 apt install libguestfs-tools
 ```
 
@@ -45,5 +44,22 @@ chown 0700 /opt/kvm/create-vm.sh
 
 ---
 
+## 3.0 Isolated Network
 
+```
+touch /etc/libvirt/qemu/networks/isolated.xml
+
+<network>
+	<name>isolated</name>
+	<uuid>6b45d478-f1c3-4b36-9796-efc95b33d10b</uuid>
+	<bridge name='virbr0' stp='on' delay='0'/>
+	<mac address='52:54:00:e4:e9:ec'/>
+	<ip address='192.168.254.1' netmask='255.255.255.0'>
+		<dhcp>
+			<range start='192.168.254.2' end='192.168.254.254'/>
+		</dhcp>
+	</ip>
+</network>
+
+```
 
